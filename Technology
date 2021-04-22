@@ -1,0 +1,9 @@
+# Technologies Used for Our Project
+## Data Cleaning and Analysis
+Intially,we will use Postgres SQL to clean and analyze our data. Additionally, Python (pandas) could also be of benefit to further explore our data. 
+## Database Storage
+AWS will be used to store our data.
+##Machine Learning Model
+SciKitLearn will be used to produce our machine learning predictive model.
+##Visualization 
+Tableau will be used to visualize our unique findings using multiple graphs that will validate our research in a simplified manner.
