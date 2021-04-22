@@ -1,0 +1,9 @@
+#Technology Used for Our Project
+##Data Cleaning and Analysis
+Postgres SQL will be used for data cleaning and anlyzing our data. Additionally, Python (Pandas) may also be used to further explore our data. 
+##Data Storage
+Our data will be stored in AWS.
+##Machine Learning
+SciKitLearn will be used to create and test our machine learning model. Our ML model will test a predictive statistic.
+##Visualization
+Tableau will be used to visualize our analysis. Our unique data will be visualized in a simplified manner so all stakeholders will be able to access the validity of our data. Data will be presented in a story format.
