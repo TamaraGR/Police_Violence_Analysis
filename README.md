@@ -11,6 +11,8 @@ Machine Learning (Python)
 Database: Postgress
 Host Instance: AWS RDS
 Analytics: Tableau
+
+#Technology used 
 ## Team 
 Tamara 
 Nigel
@@ -22,8 +24,12 @@ We will be meeting twice the week and checking on What has been accomplished and
 
 ## Links 
 
-## Project Description 
+## Project Flow 
 The Machine learning model will be trained to depict how much accuracy shootings were accurate.
+
+## ERD Description 
+
+## ML Description 
 
 ## Conclusion 
 How many shootings happen in US and how much it will increase in coming years .
