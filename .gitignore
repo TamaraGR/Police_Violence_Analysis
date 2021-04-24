@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Dataset
+2013-2020_Killings_by_PD_Cleaned.csv
