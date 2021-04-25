@@ -19,7 +19,7 @@ This project intends to analyze police violence across the United States, detect
 [Tamara Grigoryeva](https://www.linkedin.com/in/tamaragrigoryeva/)
 
 
-## Questions & Initial Data Analysis
+## Questions 
 
 Below are the questions that the team is looking to address during this project: 
 
@@ -35,22 +35,50 @@ Below are the questions that the team is looking to address during this project:
 - [x] Population trend (Race , Age, Criminal History)
 - [x] Improper identification Killings 
 
-
-## Resources 
-Machine Learning (Python)
-Database: Postgress
-Host Instance: AWS RDS
-Analytics: Tableau
-
-#Technology used 
-
+![link](https://i.guim.co.uk/img/media/fd398259625476ea51106180ab608f1f55d1b7e4/0_306_5344_3207/master/5344.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=993b25ee7d5bf9bb4568e8b5a08e55d8)
 
 ## Communications Protocols 
-We will be meeting twice the week and checking on What has been accomplished and what will be accomplished in coming weeks
 
-## Links 
+The project team is parking all the project documents in this GitHub repository under various branches and on [Google Drive](https://drive.google.com/drive/folders/1XFVpMkhayZw_rGAlpjGC60XuhsebHg0z). The team has set up a board of tasks that need to be accomplished on a weekly basis using Agile project management's Scrum methodology. The team meets twice a week (see the [team calendar](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/TIMELINE%20(1)%20(2).docx) for reference) via videocalls (Microsoft Teams and Google Meet), twice a week during the bootcamp classes and casually during teaching assistants' office hours. The team also communicates daily via Slack and Gmail. 
 
-## Project Flow 
+## Resources 
+
+The following resources have been used so far. It is possible that during the life of the project additional resources will be added: 
+
+- [x] [Washington Post Police Shooting Data 2015-2021](https://github.com/washingtonpost/data-police-shootings)
+- [x] [fatal-police-shootings-data.csv](https://github.com/TamaraGR/Police_Violence_Analysis/tree/amanda/Resources)
+- [x] [Pandas Categorical Data](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
+- [x] [Seaborn Documentation](https://seaborn.pydata.org/introduction.html)
+- [x] [imbalanced-learn documentation](https://imbalanced-learn.org/stable/index.html)
+- [x] [scikit-learn documentation](https://scikit-learn.org/stable/supervised_learning.html)
+
+#### Dependencies
+-[x] Jupyter Notebook
+- [x] Python v3.x
+- [x] Pandas
+- [x] Numpy
+- [x] Seaborn
+- [x] Matplotlib
+- [x] SciKit-Learn
+- [x] Imbalanced-Learn
+
+## Technology at use 
+
+#### Database
+Postgres SQL will be used for data cleaning and anlyzing our data. Additionally, Python (Pandas) may also be used to further explore our data. 
+#### Host Instance 
+Our data will be stored in AWS RDS.
+#### Machine Learning (Python)
+SciKitLearn will be used to create and test our machine learning model. Our ML model will test a predictive statistic.
+#### Visualization
+Tableau will be used to visualize our analysis. Our unique data will be visualized in a simplified manner so all stakeholders will be able to access the validity of our data. Data will be presented in a story format.
+
+## Initial Data Analysis
+
+
+
+
+
 The Machine learning model will be trained to depict how much accuracy shootings were accurate.
 
 ## ERD Description 
