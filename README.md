@@ -75,11 +75,31 @@ Tableau will be used to visualize our analysis. Our unique data will be visualiz
 
 ## Initial Data Analysis
 
+To start off the project the team performed initial analysis of the data. Below are some of the findings: 
+
+- [x] Despite the wide-spread misconception that growing attention to the police violence is improving the situation, the rate at which the law enforcement officers commit murder and other violence against the civilians remains the same: 
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Police%20Killings%20Over%20Time.png)
+
+- [x] While George Floyd's murderer was just convicted, overall there's little accountability for police brutality:
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Visuals3.JPG)
+
+- [x] However, the nature of the police violence is evolving:
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Visuals2.JPG)
+
+- [x] Black people are most likely to be killed by the police in the United States:
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Visuals.JPG)
+
+- [x] And black people are killed at higher rates than white people in 47 out 50 states: 
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Racial%20Disparities.png)
 
 
 
 
-The Machine learning model will be trained to depict how much accuracy shootings were accurate.
 
 ## ERD Description 
 
