@@ -41,6 +41,12 @@ Balanced Random Forest's average precision score of 0.47 means that this algorit
 
 An average recall score of 0.26 means that 26% of class predictions made out of all positive examples in this dataset were correct, whereas 74% were incorrect.
 
+#### Prediction:
+The Balanced Random Forest Classifier predicted the following races as having the highest incidences of police-related violence:
+
+![rf_pred](https://user-images.githubusercontent.com/73897240/116002684-e3debe00-a5c8-11eb-8ac4-b7a66bc94558.PNG)
+
+
 
 ### Easy Ensemble AdaBoost Classifier
 The Easy Ensemble AdaBoost Classifier combine multiple weak or low accuracy models to create a strong, accurate models. This algorithm uses one-level decision trees as weak learners that are added to the ensemble sequentially. This is an iterative process, so each subsequent model attempts to correct predictions made by the previous model in the sequence.
@@ -57,5 +63,11 @@ This algorithm's precision score of 0.49 means that it predicted positive class 
 
 The average recall score of 0.33 means that 33% of class predictions made out of all positive examples in this dataset were correct.
 
+#### Prediction:
+The Easy Ensemble AdaBoost Classifier predicted the following races as having the highest incidences of police-related violence:
+
+![ee_pred](https://user-images.githubusercontent.com/73897240/116002626-aa0db780-a5c8-11eb-9711-8125bc0355d8.PNG)
+
 
 ### Why this model was chosen
+The team will continue to conduct additional testing and evaluation on machine learning models before deciding on a model.  Models that will be tested include Decision Tree, Random Forest, and Support Vector Classifier (SVC).
