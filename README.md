@@ -53,7 +53,7 @@ The following resources have been used so far. It is possible that during the li
 - [x] [scikit-learn documentation](https://scikit-learn.org/stable/supervised_learning.html)
 
 #### Dependencies
--[x] Jupyter Notebook
+- [x] Jupyter Notebook
 - [x] Python v3.x
 - [x] Pandas
 - [x] Numpy
@@ -66,8 +66,12 @@ The following resources have been used so far. It is possible that during the li
 
 #### Database
 Postgres SQL will be used for data cleaning and anlyzing our data. Additionally, Python (Pandas) may also be used to further explore our data. 
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Postgress%20Table%20Created.jpg)
 #### Host Instance 
 Our data will be stored in AWS RDS.
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Port%20hosted%20on%20AWS.jpg)
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/AWS%20Port.jpg)
 #### Machine Learning (Python)
 SciKitLearn will be used to create and test our machine learning model. Our ML model will test a predictive statistic.
 #### Visualization
@@ -97,13 +101,40 @@ To start off the project the team performed initial analysis of the data. Below 
 
 ![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Racial%20Disparities.png)
 
+## The ERD 
 
+Below is the project data's entity relationship diagram (ERD): 
 
-
-
-## ERD Description 
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/QuickDBD-exportupdate2.png)
 
 ## ML Description 
 
+Below is the description of the initial machine learning (ML) model mockup. This model is likely to be significantly modified and evolve at project's next steps. 
+
+#### Balanced Random Forest Classifier
+
+The Balanced Random Forest Classifier is an ensemble method where each tree in the ensemble is built from a sample drawn with replacement (bootstrap sample) from the training set. Instead of using all the features, a random subset of features is selected, which further randomizes the tree. As a result, the bias of the forest increases slightly, but since the less correlated trees are averaged, its variance decreases, which results in an overall better model.
+
+Once the data were balanced and trained, the balanced random forest algorithm gave the following scores:
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/ml_model1.png)
+
+Balanced Accuracy Score: 0.292
+
+This algorithm's balanced accuracy score is 0.292, which means only 29% of class predictions were correct and 71% were incorrect.
+
+Balanced Random Forest's average precision score of 0.47 means that this algorithm predicted positive class predictions 47% of the time on this dataset.
+
+An average recall score of 0.26 means that 26% of class predictions made out of all positive examples in this dataset were correct, whereas 74% were incorrect.
+
+#### Easy Ensemble AdaBoost Classifier
+
+The Easy Ensemble AdaBoost Classifier combine multiple weak or low accuracy models to create a strong, accurate models. This algorithm uses one-level decision trees as weak learners that are added to the ensemble sequentially. This is an iterative process, so each subsequent model attempts to correct predictions made by the previous model in the sequence.
+
+Once the data were balanced and trained, the Easy Ensemble AdaBoost Classifier algorithm gave the following scores:
+
+![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/ml_model2.png)
+
 ## Conclusion 
-How many shootings happen in US and how much it will increase in coming years .
+
+At the initial state of the project our conclusion is that racial bias is present in police behavior across the United states, and that further analysis must be performed. 
