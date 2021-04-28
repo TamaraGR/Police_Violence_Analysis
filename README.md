@@ -12,7 +12,7 @@ This project intends to analyze police violence across the United States, detect
 
 [Amanda Thomson](https://www.linkedin.com/in/acfthomson/)
 
-[Nigel Rowsel](https://www.linkedin.com/in/nigelrowser/)
+[Nigel Rowser](https://www.linkedin.com/in/nigelrowser/)
 
 [Shivam Mittal](https://www.linkedin.com/in/shivammittalbi/)
 
