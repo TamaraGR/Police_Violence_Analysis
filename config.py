@@ -1,1 +1,1 @@
-db_password="FinalProject10"
+db_password="Finalproject10"
