@@ -82,5 +82,11 @@ An average recall score of 0.53 means that 53% of class predictions made out of 
 
 
 #### Limitations
+- Random Forest requires a lot of time and computational power.  The large number of trees can make the algorithm too slow and ineffective for real-time predictions. A more accurate prediction requires more trees, which results in a slower model. 
+- Due to the ensemble of decision trees, it can suffer interpretability and fails to determine the significance of each variable.
 
 #### Benefits
+- Random Forest prevents overfitting by creating trees on random subset.
+- Random forest adds additional randomness to the model, while growing the trees. Instead of searching for the most important feature while splitting a node, it searches for the best feature among a random subset of features. This results in a wide diversity that generally results in a better model.
+- It automates missing values present in the data.
+- Normalising of data is not required as it uses a rule-based approach.
