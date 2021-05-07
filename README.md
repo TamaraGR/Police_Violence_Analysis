@@ -6,9 +6,9 @@
 
 From Rodney King to Trayvon Martin to Ma'Khia Bryant: the police violence against civilians in the United States is a fact, a significant socio-political challenge and a major human tragedy. In 2020, when one of the four police officers at the scene murdered a black American man George Floyd by kneeling on his neck for 9 minutes and 29 seconds, Floyd's last words 'I can't breath' became a slogan that lead to mass uprising in the US and across the world. Yet, since the arrest of his murderer Derek Chauvin, at least 3 people were [killed by the police](https://www.nytimes.com/2021/04/17/us/police-shootings-killings.html) every day. 
 
-This project intends to analyze police violence across the United States, detect the states where the police is more prone to violence and analyze whether there is racial and/ or other bias in violent police behavior. For a brief project review, refer to the project presentation [slides](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Police%20Violence%20Analysis%20Starter.pdf). For a more detailed outline continue reading below. 
+This project intends to analyze police violence (while police violence can be interpeted in various ways, in this instance we are recording only fatal for the civilians encounters with the law enforcement) across the United States in 2013-2020, detect the states where the police is more prone to violence and analyze whether there is racial and/ or other bias in violent police behavior. The project is also looking to compare the budgets of the police departments in the states where police violence is at highest. Among other things the project is looking at: correlation between the age of the victims and whether they attempted to flee the scene; comparisons between US population by race and US police victims by race. For a brief project review, refer to the project presentation [slides](https://docs.google.com/presentation/d/1aULhBseskY9bSc43wZSjO4jBaIV-M7Q0WGX64fDIav8/edit#slide=id.gd840a24403_2_75). For a more detailed outline continue reading below. 
 
-## Team 
+## Project Team 
 
 [Amanda Thomson](https://www.linkedin.com/in/acfthomson/)
 
@@ -21,32 +21,33 @@ This project intends to analyze police violence across the United States, detect
 
 ## Questions 
 
-Below are the questions that the team is looking to address during this project: 
+The project research is focused around the following questions: 
 
-- [x] Map the violence/ shootings by race and zip code for all states (heat map)
-- [x] Examine the victims for signs of mental illness, age, gender, armed/umarmed (pie charts)
-- [x] Whether a body camera was on the police officer and what was the manner of death
-- [x] What is the budget of the police agencies versus shootings?
-- [x] Type of training and how often police officers are trained on de-escalation vs. shooting incidents
-- [x] The city/ state with most killings 
-- [x] Are the police racist, is there a correlation between amount of training and police misconduct, other trends? 
-- [x] Which race is the highest victim of the police and does the police have bias toward them?
-- [x] Years of Service to killings
-- [x] Population trend (Race , Age, Criminal History)
-- [x] Improper identification Killings 
+#### - [x] MAIN QUESTION: IS THERE RACIAL BIAS IN POLICE VIOLENCE IN THE US? 
+
+##### SUPPORTING QUESTIONS: 
+- [x] WHAT ARE THE TOP STATES/ COUNTIES FOR POLICE VIOLENCE IN 2013-2020?
+- [x] WHAT IS THE DEATHS BREAKDOWN BY RACE VS. COUNTRY POPULATION BY RACE?
+- [x] IS THERE A CORRELATION BETWEEN THR AGE OF TH VICTIM AND WHETHER THEY FLED?
+- [x] WHAT ARE THE POLICE DEPARTMENTS' BUDGETS?
+- [x] CAN POLICE VIOLENCE IN THE US BE PREDICTED BASED ON FACTORS SUCH AS RACE? 
+
 
 ![link](https://i.guim.co.uk/img/media/fd398259625476ea51106180ab608f1f55d1b7e4/0_306_5344_3207/master/5344.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=993b25ee7d5bf9bb4568e8b5a08e55d8)
 
 ## Communications Protocols 
 
-The project team is parking all the project documents in this GitHub repository under various branches and on [Google Drive](https://drive.google.com/drive/folders/1XFVpMkhayZw_rGAlpjGC60XuhsebHg0z). The team has set up a board of tasks that need to be accomplished on a weekly basis using Agile project management's Scrum methodology. The team meets twice a week (see the [team calendar](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/TIMELINE%20(1)%20(2).docx) for reference) via videocalls (Microsoft Teams and Google Meet), twice a week during the bootcamp classes and casually during teaching assistants' office hours. The team also communicates daily via Slack and Gmail. 
+The project team is parking all the project documents in this GitHub repository under various branches and on [Google Drive](https://drive.google.com/drive/folders/1XFVpMkhayZw_rGAlpjGC60XuhsebHg0z). The team has set up a board of tasks on [GitHUb Project](https://github.com/orgs/PoliceViolenceResearchers/projects/1) and [Trello](https://trello.com/b/LevAf2W4/final-project-board) that need to be accomplished on a weekly basis using Agile project management's Scrum methodology. The team meets twice a week (see the [team calendar](https://docs.google.com/document/d/1QDvCv2GM66mny9WziS2Iv2anesQr8L_l/edit) for reference) via videocalls (Microsoft Teams and Google Meet), twice a week during the bootcamp classes and casually during teaching assistants' office hours. The team also communicates daily via Slack and Gmail. 
 
 ## Resources 
 
 The following resources have been used so far. It is possible that during the life of the project additional resources will be added: 
 
 - [x] [Washington Post Police Shooting Data 2015-2021](https://github.com/washingtonpost/data-police-shootings)
-- [x] [fatal-police-shootings-data.csv](https://github.com/TamaraGR/Police_Violence_Analysis/tree/amanda/Resources)
+
+
+The project has used the following documentation:
+
 - [x] [Pandas Categorical Data](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
 - [x] [Seaborn Documentation](https://seaborn.pydata.org/introduction.html)
 - [x] [imbalanced-learn documentation](https://imbalanced-learn.org/stable/index.html)
