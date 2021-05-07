@@ -41,12 +41,13 @@ The project team is parking all the project documents in this GitHub repository 
 
 ## Resources 
 
-The following resources have been used so far. It is possible that during the life of the project additional resources will be added: 
+The project has used the [Police Killings in 2013-2020 dataset](https://github.com/TamaraGR/Police_Violence_Analysis/blob/machine_learning/2013-2020_Police_Killings_Revised.xlsx) as the main resource. Below are some of the supporting datasets that the project has also leaned on:
 
+- [x] [Police Stations/ Departments Budgets](https://github.com/TamaraGR/Police_Violence_Analysis/blob/database/City_Budget.csv)
 - [x] [Washington Post Police Shooting Data 2015-2021](https://github.com/washingtonpost/data-police-shootings)
+- [x] [Kaggle Datasets on Police Violence and racial Equity](https://www.kaggle.com/jpmiller/police-violence-in-the-us)
 
-
-The project has used the following documentation:
+The project has used the following documentation tools:
 
 - [x] [Pandas Categorical Data](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
 - [x] [Seaborn Documentation](https://seaborn.pydata.org/introduction.html)
@@ -62,23 +63,17 @@ The project has used the following documentation:
 - [x] Matplotlib
 - [x] SciKit-Learn
 - [x] Imbalanced-Learn
+- [x] SQLAlchemy
+- [x] MySQL
+- [x] JSON
+- [x] Pyscopg2
 
 ## Technology at use 
 
-#### Database
-Postgres SQL will be used for data cleaning and anlyzing our data. Additionally, Python (Pandas) may also be used to further explore our data. 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Postgress%20Table%20Created.jpg)
-
-#### Host Instance 
-Our data will be stored in AWS RDS.
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Port%20hosted%20on%20AWS.jpg)
-
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/AWS%20Port.jpg)
-
-#### Machine Learning (Python)
-SciKitLearn will be used to create and test our machine learning model. Our ML model will test a predictive statistic.
-#### Visualization
-Tableau will be used to visualize our analysis. Our unique data will be visualized in a simplified manner so all stakeholders will be able to access the validity of our data. Data will be presented in a story format.
+- [x] Database: The project used Postgres SQL and Python Pandas were used to load, clean and analyze the data (for data loading documentation refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/tree/database), including the ERD [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/database/ERD_database.png)).  
+- [x] Host Instance: The project data is stored in AWS RDS. 
+- [x] Machine Learning (Python): The project used SciKitLearn to create and test the machine learning (ML) model. THe ML model is tetsing a predictive statistic (For further details please refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/machine_learning/Police_Violence_Clean.ipynb)).
+- [x] Visualization: The project used visuals from the ML analysis as well as Tableau to visualize the analysis. Data is visualized in a simplified manner for all stakeholders to be able to access the validity of it. Data is presented in a story format (To review the dashboard in Tableau please refer [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience)). 
 
 ## Initial Data Analysis
 
