@@ -58,8 +58,7 @@ The column Victim_Race was dropped because this is the target variable that will
 
 
 ### Model Choice
-Random Forest, Decision Tree, and Logistic Regression models were tested.  Note that none of the models were optimized at this time.  Results below are of the initial test of the model.
-
+Random Forest, Decision Tree, and Logistic Regression models were tested.  Note that none of the models were optimized at this time.  Overall, all three models performed relatively the same, but future progress on this model will use Random Forest.  Results below are of the initial tests of the models.
 
 #### Random Forest
 Random Forest is a supervised machine learning algorithm that creates decision trees on randomly selected data samples, gets predictions from each tree and selects the best solution by means of voting.  The prediction result with the most votes is selected as the final prediction.  
@@ -67,9 +66,23 @@ Random Forest is a supervised machine learning algorithm that creates decision t
 Random Forest gave the following scores:
 
 Receiver Operator Characteristic — Area Under the Curve (ROC AUC) score:
-0.561
+0.565
 
 ![rf_class_report](https://user-images.githubusercontent.com/73897240/117449016-75c1c180-af0d-11eb-92cd-88cf1de22766.PNG)
+
+The ROC AUC score for this model means that 56.5% of classes are correct and 43.5% are incorrect.
+
+An average precision score of 0.53 means that this model predicted positive class predictions 53% of the time.
+
+An average recall score of 0.53 means that 53% of class predictions made out of all positive examples in the dataset were correct and 47% were incorrect.
+
+#### Decision Tree
+Decision Tree is another supervised machine learning algorithm that can make predictions by learning simple decision rules inferred from test data.
+
+Decision Tree gave the following scores:
+ROC AUC: 0.561
+
+![dt_class_report](https://user-images.githubusercontent.com/73897240/117475605-42416000-af2a-11eb-8c2b-a3b8cf05cbc9.PNG)
 
 The ROC AUC score for this model means that 56.1% of classes are correct and 43.9% are incorrect.
 
@@ -77,15 +90,25 @@ An average precision score of 0.53 means that this model predicted positive clas
 
 An average recall score of 0.53 means that 53% of class predictions made out of all positive examples in the dataset were correct and 47% were incorrect.
 
+#### Logistic Regression
+Logisitc Regression is a supervised machine learning algorithm that is used to assign observations to a discrete set of classes.
 
-#### Decision Tree
+Logistic Regression gave the following scores:
+ROC AUC: 0.516
 
+![logreg_class_report](https://user-images.githubusercontent.com/73897240/117476091-cbf12d80-af2a-11eb-9f55-3647907e68b6.PNG)
 
-#### Limitations
+The ROC AUC score for this model means that 51.6% of classes are correct and 48.4% are incorrect.
+
+An average precision score of 0.30 means that this model predicited positive class predictions 30% of the time.
+
+An average recall score of 0.46 means that 46% of class predicitions made out of all positive examples in the dataset were correct and 54% were incorrect.
+
+#### Random Forest Limitations
 - Random Forest requires a lot of time and computational power.  The large number of trees can make the algorithm too slow and ineffective for real-time predictions. A more accurate prediction requires more trees, which results in a slower model. 
 - Due to the ensemble of decision trees, it can suffer interpretability and fails to determine the significance of each variable.
 
-#### Benefits
+#### Random Forest Benefits
 - Random Forest prevents overfitting by creating trees on random subset.
 - Random forest adds additional randomness to the model, while growing the trees. Instead of searching for the most important feature while splitting a node, it searches for the best feature among a random subset of features. This results in a wide diversity that generally results in a better model.
 - It automates missing values present in the data.
