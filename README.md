@@ -75,86 +75,117 @@ The project has used the following documentation tools:
 - [x] Machine Learning (Python): The project used SciKitLearn to create and test the machine learning (ML) model. THe ML model is tetsing a predictive statistic (For further details please refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/machine_learning/Police_Violence_Clean.ipynb)).
 - [x] Visualization: The project used visuals from the ML analysis as well as Tableau to visualize the analysis. Data is visualized in a simplified manner for all stakeholders to be able to access the validity of it. Data is presented in a story format (To review the dashboard in Tableau please refer [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience)). 
 
-## Initial Data Analysis
+## Data Exploration and Analysis
 
-To start off the project the team performed initial analysis of the data. Below are some of the findings: 
+To answer the listed above questions the project team reviewed the datasets listed previously, selected the main and the supporting datasets, and worked on cleaning and analyzing them. The main dataset was preprocessed and analyzed in order to test a few ML models and to select the most appropriate one. The supporting datasets helped inform and complete the visual analysis that was performed in Tableau. 
 
-- [x] Despite the wide-spread misconception that growing attention to the police violence is improving the situation, the rate at which the law enforcement officers commit murder and other violence against the civilians remains the same: 
+## ML Model Testing and Selection 
 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Police%20Killings%20Over%20Time.png)
+#### Data Preprocessing
 
-- [x] While George Floyd's murderer was just convicted, overall there's little accountability for police brutality:
+The police violence data set was imported from AWS into a Pandas DataFrame.  The DataFrame originally contained 20 columns and 9,082 rows of data. Column names include: Victim_Age, Victim_Gender, Victim_Race, Date, City, State, County, Responsible_Agency, Cause_of_Death, Brief_Description, Criminal_Charges, Mental_Illness, Armed_Status, Threat_Level, Fleeing, Body_Camera, Geography, Encounter_Type, Initial_Reason_for_Encounter, and Call_for_Service.
 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Visuals3.JPG)
+Victim_Gender, City, State, Criminal_Charges, and Brief_Description were dropped since they were not going to be used in the model prediction.  
 
-- [x] However, the nature of the police violence is evolving:
+The DataFrame was inspected for null values and any columns with 2,000 or more null values were filled in with a variable. The decision to fill in null values was made because if all rows with null values were dropped, it would significantly affect the data set.  The variables used to fill in null values were ones that were already found in the column.  The following columns were had null values replaced with a variable: Threat_Level, Fleeing, Body_Camera, Encounter_Type, Initia_Reason_for_Encounter, and Call_for_Service.     
 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Visuals2.JPG)
+Columns that contained 70 or less null values had their rows dropped.
 
-- [x] Black people are most likely to be killed by the police in the United States:
+The data type for the Victim_Age column was converted from an object to an integer because this feature needed to be an integer.
 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Visuals.JPG)
+Additional columns from the Date column were created.  New columns created include Day, Month, Year, Day_of_the_Week, and Holiday.  This data may be used to predict when some is more likely to be killed by law enforcement.  The Date column was dropped because it was no longer needed once Day, Month, Year, Day_of_the_Week, and Holiday were extracted from it.
 
-- [x] And black people are killed at higher rates than white people in 47 out 50 states: 
+Counts of Victim_Race were also calculated:
 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Prototype%20Images/Racial%20Disparities.png)
+![race_counts](https://user-images.githubusercontent.com/73897240/117447022-f3380280-af0a-11eb-8987-1000ce3abab3.PNG)
 
-## The ERD 
+Lastly, the Victim_Race values were converted to numbers:
 
-Below is the project data's entity relationship diagram (ERD): 
+![race_conversion](https://user-images.githubusercontent.com/73897240/117447188-2b3f4580-af0b-11eb-970c-a33db8369b45.PNG)
 
-![link](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/QuickDBD-exportupdate2.png)
+#### Training and Testing the Datasets
 
-## ML Description 
+Data was trained and tested on police_killings database that was stored in AWS.  This database was comprised of data from The Washington Post and Kaggle.
 
-Below is the description of the [initial machine learning (ML) model mockup](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/New_ML_Model_Mockup.ipynb). This model is likely to be significantly modified and evolve at project's next steps. 
+The AWS police_killings database was split into a training and testing data set.  The training data set was made up of 8 rows and 5,995 columns.  This will be the data the model learns from.
 
-#### Balanced Random Forest Classifier
-The Balanced Random Forest Classifier is an ensemble method where each tree in the ensemble is built from a sample drawn with replacement (bootstrap sample) from the training set. Instead of using all the features, a random subset of features is selected, which further randomizes the tree. As a result, the bias of the forest increases slightly, but since the less correlated trees are averaged, its variance decreases, which results in an overall better model.
+The test data set consists of the remaining data and will be used to assess the model's performance.
 
-Once the data were balanced and trained, the balanced random forest algorithm gave the following scores:
+#### Preliminary Feature Engineering and Selection
 
-![random_forest_scores](https://user-images.githubusercontent.com/73897240/115964224-65631d00-a4f1-11eb-8220-66d26f830100.PNG)
+The following columns were transformed into numerical values using the get_dummies method: Cause_of_Death, Mental_Illness, Armed_Status, Threat_Level, Fleeing, Body_Camera, Geography, County, Responsible_Agency, Encounter_Type, Intitial_Reason_for_Encounter, and Call_for_Service.  These will were the features the model trained on.
 
-Balanced Accuracy Score: 0.292
+The column Victim_Race was dropped because this is the target variable that will be used to predict the outcome.
 
-This algorithm's balanced accuracy score is 0.292, which means only 29% of class predictions were correct and 71% were incorrect.
+#### Model Choice
+Random Forest, Decision Tree, and Logistic Regression models were tested.  Note that none of the models were optimized at this time.  Overall, all three models performed relatively the same, but future progress on this model will use Random Forest.  Results below are of the initial tests of the models.
 
-Balanced Random Forest's average precision score of 0.47 means that this algorithm predicted positive class predictions 47% of the time on this dataset.
+##### Random Forest
+Random Forest is a supervised machine learning algorithm that creates decision trees on randomly selected data samples, gets predictions from each tree and selects the best solution by means of voting.  The prediction result with the most votes is selected as the final prediction.  
 
-An average recall score of 0.26 means that 26% of class predictions made out of all positive examples in this dataset were correct, whereas 74% were incorrect.
+Random Forest gave the following scores:
 
-#### Prediction:
-The Balanced Random Forest Classifier predicted the following races as having the highest incidences of police-related violence:
+Receiver Operator Characteristic — Area Under the Curve (ROC AUC) score:
+0.565
 
-![rf_pred](https://user-images.githubusercontent.com/73897240/116002684-e3debe00-a5c8-11eb-8ac4-b7a66bc94558.PNG)
+![rf_class_report](https://user-images.githubusercontent.com/73897240/117449016-75c1c180-af0d-11eb-92cd-88cf1de22766.PNG)
 
+The ROC AUC score for this model means that 56.5% of classes are correct and 43.5% are incorrect.
 
+An average precision score of 0.53 means that this model predicted positive class predictions 53% of the time.
 
-#### Easy Ensemble AdaBoost Classifier
-The Easy Ensemble AdaBoost Classifier combine multiple weak or low accuracy models to create a strong, accurate models. This algorithm uses one-level decision trees as weak learners that are added to the ensemble sequentially. This is an iterative process, so each subsequent model attempts to correct predictions made by the previous model in the sequence.
+An average recall score of 0.53 means that 53% of class predictions made out of all positive examples in the dataset were correct and 47% were incorrect.
 
-Once the data were balanced and trained, the Easy Ensemble AdaBoost Classifier algorithm gave the following scores:
+##### Decision Tree
+Decision Tree is another supervised machine learning algorithm that can make predictions by learning simple decision rules inferred from test data.
 
-![easy_ensemble_scores](https://user-images.githubusercontent.com/73897240/115965431-410a3f00-a4f7-11eb-8898-3b980d20e2a7.PNG)
+Decision Tree gave the following scores:
+ROC AUC: 0.561
 
-Balanced Accuracy Score: 0.271
+![dt_class_report](https://user-images.githubusercontent.com/73897240/117475605-42416000-af2a-11eb-8c2b-a3b8cf05cbc9.PNG)
 
-Easy Ensemble AdaBoost Classifier's accuracy score of 0.271 means that its predictions were correct only 27% of the time and 73% were incorrect.
+The ROC AUC score for this model means that 56.1% of classes are correct and 43.9% are incorrect.
 
-This algorithm's precision score of 0.49 means that it predicted positive class predictions 49% of the time on this dataset.
+An average precision score of 0.53 means that this model predicted positive class predictions 53% of the time.
 
-The average recall score of 0.33 means that 33% of class predictions made out of all positive examples in this dataset were correct.
+An average recall score of 0.53 means that 53% of class predictions made out of all positive examples in the dataset were correct and 47% were incorrect.
 
-#### Prediction:
-The Easy Ensemble AdaBoost Classifier predicted the following races as having the highest incidences of police-related violence:
+##### Logistic Regression
+Logisitc Regression is a supervised machine learning algorithm that is used to assign observations to a discrete set of classes.
 
-![ee_pred](https://user-images.githubusercontent.com/73897240/116002626-aa0db780-a5c8-11eb-9711-8125bc0355d8.PNG)
+Logistic Regression gave the following scores:
+ROC AUC: 0.516
 
+![logreg_class_report](https://user-images.githubusercontent.com/73897240/117476091-cbf12d80-af2a-11eb-9f55-3647907e68b6.PNG)
 
-#### Why this model was chosen
-The team will continue to conduct additional testing and evaluation on machine learning models before deciding on a model.  Models that will be tested include Decision Tree, Random Forest, and Support Vector Classifier (SVC).
+The ROC AUC score for this model means that 51.6% of classes are correct and 48.4% are incorrect.
 
-## Conclusion 
+An average precision score of 0.30 means that this model predicited positive class predictions 30% of the time.
 
-At the initial state of the project our conclusion is that racial bias is present in police behavior across the United states, and that further analysis must be performed. 
+An average recall score of 0.46 means that 46% of class predicitions made out of all positive examples in the dataset were correct and 54% were incorrect.
+
+##### Random Forest Limitations
+- Random Forest requires a lot of time and computational power.  The large number of trees can make the algorithm too slow and ineffective for real-time predictions. A more accurate prediction requires more trees, which results in a slower model. 
+- Due to the ensemble of decision trees, it can suffer interpretability and fails to determine the significance of each variable.
+
+##### Random Forest Benefits
+- Random Forest prevents overfitting by creating trees on random subset.
+- Random forest adds additional randomness to the model, while growing the trees. Instead of searching for the most important feature while splitting a node, it searches for the best feature among a random subset of features. This results in a wide diversity that generally results in a better model.
+- It automates missing values present in the data.
+- Normalising of data is not required as it uses a rule-based approach.
+
+## Project Visualization
+
+To acces the project visualization proceed to Tableau [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience) or refer to the below ![screenshot](). 
+
+The top image is from a 2020 protest to the police killings in California. The top image also states the goal of the project. The image to the right of it is a heat map with interactive features. The map allows the viewer pick top 10,20,30,40 or 50 states with highest police violence rate between 2013-2020. When hovering over the map one can also see the city, county and the number of the police victims. 
+
+The second row of infographics is two doughnut charts representing the compariosn between the US police violence victims by race and the overall US population breakdown by race. When hovering over the chart one can see the percentage of police killings for that group of population. One can also use another filter here to narrow down their search by year and month. To the right from the doughnut charts the viewer can also see a barchart that portrays the correlation between US police victims' age and whether they attempted to flee the scene. Underneath these charts one can see a breakdown of police stations/ departments' budgets in 2013-2017. In this chart the viewer can filter by year to see the changes in the budgets. 
+
+The project plans to add additional visualizations from the ML analysis to this dashboard. 
+
+## Data Limitations and Considerations for Project's Future Steps
+
+The datasets don't differentiate between civilian victims that were killed at a crime scene and during random encounters with the police (such as during a routine traffic stop). The budgets dataset only goes until 2017, therefore the project team cannot perform the correlation analysis for the 2017-2020 years between the killings and the budgets. 
+
+As some of the post-bootcamp steps the project considers to compare the US police stations data in terms of budgets, training and arming/ disarming the police officers with other countries, including those countries where the police don't carry arms.
