@@ -32,29 +32,54 @@ Columns that contained 70 or less null values had their rows dropped.
 
 The data type for the Victim_Age column was converted from an object to an integer because this feature needed to be an integer.
 
-Additional columns from the Date column were created.  New columns created include Day, Month, Year, Day_of_the_Week, and Holiday.  THis data may be used to predict when some is more likely to be killed by law enforcement.
+Additional columns from the Date column were created.  New columns created include Day, Month, Year, Day_of_the_Week, and Holiday.  This data may be used to predict when some is more likely to be killed by law enforcement.  The Date column was dropped because it was no longer needed once Day, Month, Year, Day_of_the_Week, and Holiday were extracted from it.
+
+Counts of Victim_Race were also calculated:
+
+![race_counts](https://user-images.githubusercontent.com/73897240/117447022-f3380280-af0a-11eb-8987-1000ce3abab3.PNG)
+
+Lastly, the Victim_Race values were converted to numbers:
+
+![race_conversion](https://user-images.githubusercontent.com/73897240/117447188-2b3f4580-af0b-11eb-970c-a33db8369b45.PNG)
 
 
 ### Training and Testing Data Sets
-Data was trained and tested on police_killings database that was stored in AWS.  This database was comprised of data from the Washington Post and Kaggle.
+Data was trained and tested on police_killings database that was stored in AWS.  This database was comprised of data from The Washington Post and Kaggle.
 
-The following columns were transformed into numerical values using the get_dummies method: Cause_of_Death, Mental_Illness, Armed_Status, Threat_Level, Fleeing, Body_Camera, Geography, County, Responsible_Agency, Encounter_Type, Intitial_Reason_for_Encounter, and Call_for_Service.  These will were the features the model trained on.
+The AWS police_killings database was split into a training and testing data set.  The training data set was made up of 8 rows and 5,995 columns.  This will be the data the model learns from.
 
+The test data set consists of the remaining data and will be used to assess the model's performance.
 
 
 ### Preliminary Feature Engineering and Selection
+The following columns were transformed into numerical values using the get_dummies method: Cause_of_Death, Mental_Illness, Armed_Status, Threat_Level, Fleeing, Body_Camera, Geography, County, Responsible_Agency, Encounter_Type, Intitial_Reason_for_Encounter, and Call_for_Service.  These will were the features the model trained on.
 
+The column Victim_Race was dropped because this is the target variable that will be used to predict the outcome.
 
 
 ### Model Choice
-Testing and evaluation of models is continuing.  To date, three different models were tested.  Note that none of the models were optimized at this time.  Results below are of the initial test of the model.
+Random Forest, Decision Tree, and Logistic Regression models were tested.  Note that none of the models were optimized at this time.  Results below are of the initial test of the model.
 
-#### Random Forest Model
+
+#### Random Forest
 Random Forest is a supervised machine learning algorithm that creates decision trees on randomly selected data samples, gets predictions from each tree and selects the best solution by means of voting.  The prediction result with the most votes is selected as the final prediction.  
 
-Once the test data set was trained, the Random Forest algorithm gave the following scores:
+Random Forest gave the following scores:
 
-Balanced Accuracy Score:
+Receiver Operator Characteristic — Area Under the Curve (ROC AUC) score:
+0.561
+
+![rf_class_report](https://user-images.githubusercontent.com/73897240/117449016-75c1c180-af0d-11eb-92cd-88cf1de22766.PNG)
+
+The ROC AUC score for this model means that 56.1% of classes are correct and 43.9% are incorrect.
+
+An average precision score of 0.53 means that this model predicted positive class predictions 53% of the time.
+
+An average recall score of 0.53 means that 53% of class predictions made out of all positive examples in the dataset were correct and 47% were incorrect.
+
+
+#### Decision Tree
+
 
 #### Limitations
 
