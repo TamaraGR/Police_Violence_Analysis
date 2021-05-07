@@ -176,7 +176,7 @@ An average recall score of 0.46 means that 46% of class predicitions made out of
 
 ## Project Visualization
 
-To acces the project visualization proceed to Tableau [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience) or refer to the below ![screenshot](). 
+To acces the project visualization proceed to Tableau [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience) or refer to the below ![screenshot](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/screenshot.png). 
 
 The top image is from a 2020 protest to the police killings in California. The top image also states the goal of the project. The image to the right of it is a heat map with interactive features. The map allows the viewer pick top 10,20,30,40 or 50 states with highest police violence rate between 2013-2020. When hovering over the map one can also see the city, county and the number of the police victims. 
 
