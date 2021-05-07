@@ -1,14 +1,10 @@
 # Machine Learning Model
 
 ## Overview
-Supervised machine learning models were created with a sample of police violence data in order to better understand which model will fit into the overall project.
+Supervised machine learning models were created with a sample of police violence data in order to better understand which model will fit into the overall project.  The goal of the model is to predict what activities will most likely lead to the victim getting killed.
 
 
 ## Resources
-- [2013-2020_Police_Killings_Revised.xlsx](https://github.com/TamaraGR/Police_Violence_Analysis/tree/machine_learning)
-- [Washington Post Police Shooting Data 2015-2021](https://github.com/washingtonpost/data-police-shootings)
-- [fatal-police-shootings-data.csv](https://github.com/TamaraGR/Police_Violence_Analysis/tree/amanda/Resources)
-- [Pandas Categorical Data](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
 - [scikit-learn documentation](https://scikit-learn.org/stable/supervised_learning.html)
 
 
@@ -17,8 +13,6 @@ Supervised machine learning models were created with a sample of police violence
 - Python v3.x
     - Pandas
     - Numpy
-    - Seaborn
-    - Matplotlib
     - SciKit-Learn
     - SQLAlchemy
     - MySQL
@@ -28,25 +22,23 @@ Supervised machine learning models were created with a sample of police violence
 
 ## Methodologies
 ### Data Preprocessing
-The police violence data set was imported from AWS into a Pandas DataFrame.  The DataFrame originally contained XX columns and X,XXX rows of data.  
-Include column names?
+The police violence data set was imported from AWS into a Pandas DataFrame.  The DataFrame originally contained 20 columns and 9,082 rows of data. Column names include: Victim_Age, Victim_Gender, Victim_Race, Date, City, State, County, Responsible_Agency, Cause_of_Death, Brief_Description, Criminal_Charges, Mental_Illness, Armed_Status, Threat_Level, Fleeing, Body_Camera, Geography, Encounter_Type, Initial_Reason_for_Encounter, and Call_for_Service.
 
-The column names were re-named and shortened so they were easier to work with.
+Victim_Gender, City, State, Criminal_Charges, and Brief_Description were dropped since they were not going to be used in the model prediction.  
 
-Discuss any dropped columns - why were they dropped
+The DataFrame was inspected for null values and any columns with 2,000 or more null values were filled in with a variable. The decision to fill in null values was made because if all rows with null values were dropped, it would significantly affect the data set.  The variables used to fill in null values were ones that were already found in the column.  The following columns were had null values replaced with a variable: Threat_Level, Fleeing, Body_Camera, Encounter_Type, Initia_Reason_for_Encounter, and Call_for_Service.     
 
-The DataFrame was inspected for null values and any columns with X,000 or more null values were filled in with a variable.  The remaining columns had 70 or less null values.  The decision to fill in null values was made because if all rows with null values were dropped, it would significantly affect the data set.  The variables used to fill in null values were ones that were already found in the column.  The following columns were had null values replaced with a variable: Threat_Level, Fleeing, Body_Camera, Encounter_Type, Initia_Reason_for_Encounter, and Call_for_Service.     
+Columns that contained 70 or less null values had their rows dropped.
 
-Null values for the age column were filled in the with mean average of ages for this column. <-- Still needs to be done... and is it even worth it for 8 null values?
+The data type for the Victim_Age column was converted from an object to an integer because this feature needed to be an integer.
 
-The remaining columns that contained null values were dropped.
-
-The data type for the Victim_Age column was converted from an object to an integer because of XYZ.
-
-Additional columns from the Date column were created as they are vital to the analysis that will be conducted with this machine learning model.  New columns created include Day, Month, Year, Day_of_the_Week, and Holiday.
+Additional columns from the Date column were created.  New columns created include Day, Month, Year, Day_of_the_Week, and Holiday.  THis data may be used to predict when some is more likely to be killed by law enforcement.
 
 
 ### Training and Testing Data Sets
+Data was trained and tested on police_killings database that was stored in AWS.  This database was comprised of data from the Washington Post and Kaggle.
+
+The following columns were transformed into numerical values using the get_dummies method: Cause_of_Death, Mental_Illness, Armed_Status, Threat_Level, Fleeing, Body_Camera, Geography, County, Responsible_Agency, Encounter_Type, Intitial_Reason_for_Encounter, and Call_for_Service.  These will were the features the model trained on.
 
 
 
