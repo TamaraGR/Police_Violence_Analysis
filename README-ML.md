@@ -128,16 +128,5 @@ killings_encoded = pd.get_dummies(killings_df, columns =
                                    'Initial_Reason_for_Encounter', 'Call_for_Service'])
 ```                                   
 
-Values in the Victim_Race column were also converted to numerals.
-```python
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('White', 1)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Black', 2)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Hispanic', 3)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Unknown Race', 4)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Asian', 5)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Native American', 6)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Pacific Islander', 7)
-```
 
-The police killings data set was split into training and testing sets
 
