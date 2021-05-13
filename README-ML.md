@@ -18,6 +18,8 @@ Supervised machine learning models were created with a sample of police violence
     - MySQL
     - JSON
     - Pyscopg2
+    - Matplotlib
+    - Seaborn
 
 
 ## Methodologies
