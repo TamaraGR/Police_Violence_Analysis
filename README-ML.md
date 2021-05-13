@@ -113,3 +113,31 @@ An average recall score of 0.46 means that 46% of class predicitions made out of
 - Random forest adds additional randomness to the model, while growing the trees. Instead of searching for the most important feature while splitting a node, it searches for the best feature among a random subset of features. This results in a wide diversity that generally results in a better model.
 - It automates missing values present in the data.
 - Normalising of data is not required as it uses a rule-based approach.
+
+
+### Model Training
+The police killings dataset originally consisted of 16 columns and 9,082 rows of data:
+
+![police_killings_original](https://user-images.githubusercontent.com/73897240/118197911-e0975f00-b41d-11eb-8414-1fc75c160c12.PNG)
+
+In order to begin training the model several columns were encoded using the get_dummies() method.
+```python
+killings_encoded = pd.get_dummies(killings_df, columns = 
+                                  ['Cause_of_Death', 'Mental_Illness', 'Armed_Status', 'Threat_Level', 'Fleeing', 
+                                   'Body_Camera', 'Geography', 'County', 'Responsible_Agency', 'Encounter_Type', 
+                                   'Initial_Reason_for_Encounter', 'Call_for_Service'])
+```                                   
+
+Values in the Victim_Race column were also converted to numerals.
+```python
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('White', 1)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Black', 2)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Hispanic', 3)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Unknown Race', 4)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Asian', 5)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Native American', 6)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Pacific Islander', 7)
+```
+
+The police killings data set was split into training and testing sets
+
