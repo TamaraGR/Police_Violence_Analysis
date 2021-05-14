@@ -6,7 +6,7 @@
 
 From Rodney King to Trayvon Martin to Ma'Khia Bryant: the police violence against civilians in the United States is a fact, a significant socio-political challenge and a major human tragedy. In 2020, when one of the four police officers at the scene murdered a black American man George Floyd by kneeling on his neck for 9 minutes and 29 seconds, Floyd's last words 'I can't breath' became a slogan that lead to mass uprising in the US and across the world. Yet, since the arrest of his murderer Derek Chauvin, at least 3 people were [killed by the police](https://www.nytimes.com/2021/04/17/us/police-shootings-killings.html) every day. 
 
-This project intends to analyze police violence (while police violence can be interpeted in various ways, in this instance we are recording only fatal for the civilians encounters with the law enforcement) across the United States in 2013-2020, detect the states where the police is more prone to violence and analyze whether there is racial and/ or other bias in violent police behavior. The project is also looking to compare the budgets of the police departments in the states where police violence is at highest. Among other things the project is looking at: correlation between the age of the victims and whether they attempted to flee the scene; comparisons between US population by race and US police victims by race. For a brief project review, refer to the project presentation [slides](https://docs.google.com/presentation/d/1aULhBseskY9bSc43wZSjO4jBaIV-M7Q0WGX64fDIav8/edit#slide=id.gd840a24403_2_75). For a more detailed outline continue reading below. 
+This project intends to analyze police violence (while police violence can be interpeted in various ways, in this instance we are recording only fatal for the civilians encounters with the law enforcement) across the United States in 2013-2020, detect the states where the police is more prone to violence and analyze whether there is racial and/ or other bias in violent police behavior. The project is also looking to compare the budgets of the police departments in the states where police violence is at highest. Among other things the project is looking at: correlation between the age of the victims and whether they attempted to flee the scene; comparisons between US population by race and US police victims by race. For a brief project review, refer to the project presentation [slides](https://spark.adobe.com/page/XI73Ev5wjTeE3/). For a more detailed outline continue reading below. 
 
 ## Project Team 
 
@@ -34,10 +34,6 @@ The project research is focused around the following questions:
 
 
 ![link](https://i.guim.co.uk/img/media/fd398259625476ea51106180ab608f1f55d1b7e4/0_306_5344_3207/master/5344.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=993b25ee7d5bf9bb4568e8b5a08e55d8)
-
-## Communications Protocols 
-
-The project team is parking all the project documents in this GitHub repository under various branches and on [Google Drive](https://drive.google.com/drive/folders/1XFVpMkhayZw_rGAlpjGC60XuhsebHg0z). The team has set up a board of tasks on [GitHUb Project](https://github.com/orgs/PoliceViolenceResearchers/projects/1) and [Trello](https://trello.com/b/LevAf2W4/final-project-board) that need to be accomplished on a weekly basis using Agile project management's Scrum methodology. The team meets twice a week (see the [team calendar](https://docs.google.com/document/d/1QDvCv2GM66mny9WziS2Iv2anesQr8L_l/edit) for reference) via videocalls (Microsoft Teams and Google Meet), twice a week during the bootcamp classes and casually during teaching assistants' office hours. The team also communicates daily via Slack and Gmail. 
 
 ## Resources 
 
@@ -176,7 +172,7 @@ An average recall score of 0.46 means that 46% of class predicitions made out of
 
 ## Project Visualization
 
-To acces the project visualization proceed to Tableau [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience) or refer to the below ![screenshot](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/screenshot.png). 
+To acces the project visualization proceed to Tableau [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience) or refer to the below screenshot ![screenshot](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/screenshot.png). 
 
 The top image is from a 2020 protest to the police killings in California. The top image also states the goal of the project. The image to the right of it is a heat map with interactive features. The map allows the viewer pick top 10,20,30,40 or 50 states with highest police violence rate between 2013-2020. When hovering over the map one can also see the city, county and the number of the police victims. 
 
