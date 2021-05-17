@@ -93,11 +93,11 @@ Additional columns from the Date column were created.  New columns created inclu
 
 Counts of Victim_Race were also calculated:
 
-![race_counts](https://user-images.githubusercontent.com/73897240/117447022-f3380280-af0a-11eb-8987-1000ce3abab3.PNG)
+![race_counts](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/1.png)
 
 Lastly, the Victim_Race values were converted to numbers:
 
-![race_conversion](https://user-images.githubusercontent.com/73897240/117447188-2b3f4580-af0b-11eb-970c-a33db8369b45.PNG)
+![race_conversion](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/2.png)
 
 #### Training and Testing the Datasets
 
@@ -124,7 +124,7 @@ Random Forest gave the following scores:
 Receiver Operator Characteristic — Area Under the Curve (ROC AUC) score:
 0.565
 
-![rf_class_report](https://user-images.githubusercontent.com/73897240/117449016-75c1c180-af0d-11eb-92cd-88cf1de22766.PNG)
+![rf_class_report](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/3.png)
 
 The ROC AUC score for this model means that 56.5% of classes are correct and 43.5% are incorrect.
 
@@ -138,7 +138,7 @@ Decision Tree is another supervised machine learning algorithm that can make pre
 Decision Tree gave the following scores:
 ROC AUC: 0.561
 
-![dt_class_report](https://user-images.githubusercontent.com/73897240/117475605-42416000-af2a-11eb-8c2b-a3b8cf05cbc9.PNG)
+![dt_class_report](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/4.png)
 
 The ROC AUC score for this model means that 56.1% of classes are correct and 43.9% are incorrect.
 
@@ -152,7 +152,7 @@ Logisitc Regression is a supervised machine learning algorithm that is used to a
 Logistic Regression gave the following scores:
 ROC AUC: 0.516
 
-![logreg_class_report](https://user-images.githubusercontent.com/73897240/117476091-cbf12d80-af2a-11eb-9f55-3647907e68b6.PNG)
+![logreg_class_report](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Images/5.png)
 
 The ROC AUC score for this model means that 51.6% of classes are correct and 48.4% are incorrect.
 
