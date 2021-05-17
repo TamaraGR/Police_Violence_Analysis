@@ -37,7 +37,7 @@ The project research is focused around the following questions:
 
 ## Resources 
 
-The project has used the [Police Killings in 2013-2020 dataset](https://github.com/TamaraGR/Police_Violence_Analysis/blob/machine_learning/2013-2020_Police_Killings_Revised.xlsx) as the main resource. Below are some of the supporting datasets that the project has also leaned on:
+The project has used the [Police Killings in 2013-2020 dataset](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Datasets/2013-2020_Police_Killings_Revised%20(3).xlsx) as the main resource. Below are some of the supporting datasets that the project has also leaned on:
 
 - [x] [Police Stations/ Departments Budgets](https://github.com/TamaraGR/Police_Violence_Analysis/blob/database/City_Budget.csv)
 - [x] [Washington Post Police Shooting Data 2015-2021](https://github.com/washingtonpost/data-police-shootings)
@@ -66,9 +66,9 @@ The project has used the following documentation tools:
 
 ## Technology at use 
 
-- [x] Database: The project used Postgres SQL and Python Pandas were used to load, clean and analyze the data (for data loading documentation refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/tree/database), including the ERD [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/database/ERD_database.png)).  
+- [x] Database: The project used Postgres SQL and Python Pandas were used to load, clean and analyze the data (for data loading documentation refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/main/Resources/Supporting%20Documents/Police_Violence_Analysis-database%20(2).zip), including the ERD.  
 - [x] Host Instance: The project data is stored in AWS RDS. 
-- [x] Machine Learning (Python): The project used SciKitLearn to create and test the machine learning (ML) model. THe ML model is tetsing a predictive statistic (For further details please refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/machine_learning/Police_Violence_Clean.ipynb)).
+- [x] Machine Learning (Python): The project used SciKitLearn to create and test the machine learning (ML) model. THe ML model is testing a predictive statistic (For further details please refer [here](https://github.com/TamaraGR/Police_Violence_Analysis/blob/machine_learning/Police_Violence_Clean.ipynb)).
 - [x] Visualization: The project used visuals from the ML analysis as well as Tableau to visualize the analysis. Data is visualized in a simplified manner for all stakeholders to be able to access the validity of it. Data is presented in a story format (To review the dashboard in Tableau please refer [here](https://public.tableau.com/profile/shivam.mittal2652#!/vizhome/PoliceVoliencemockups/PoliceVolience)). 
 
 ## Data Exploration and Analysis
