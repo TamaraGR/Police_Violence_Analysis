@@ -185,3 +185,13 @@ The project plans to add additional visualizations from the ML analysis to this 
 The datasets don't differentiate between civilian victims that were killed at a crime scene and during random encounters with the police (such as during a routine traffic stop). The budgets dataset only goes until 2017, therefore the project team cannot perform the correlation analysis for the 2017-2020 years between the killings and the budgets. 
 
 As some of the post-bootcamp steps the project considers to compare the US police stations data in terms of budgets, training and arming/ disarming the police officers with other countries, including those countries where the police don't carry arms.
+
+![image](https://www.worldatlas.com/r/w768/upload/f8/83/89/shutterstock-1078746002.jpg)
+
+## Conclusion 
+
+- [x] Phoenix, AZ is the state with the most number of police killing. Phoenix has a black population of 6.5% but 15% of police killing were black.
+- [x] From 2013-2020, 25% the victims of police killings where black. This number isn't consistent with the overall population of blacks in the US.
+- [x] Based on the total amount police killings 43% of victims weren’t fleeing, 32% of victims were unknown, 11% fled by car, 9% fled on foot, and 5% used other methods. Age isn’t a factor because ‘not fleeing’ and ‘unknown’ have the highest percentage in almost all age ranges.
+- [x] There is no clear correlation between police department budgets and the amount of police killings. Los Angeles, CA and Phoenix, AZ had 125 and 131 police killings respectfully. Los Angeles had a budget that was $271.77 million more.
+
