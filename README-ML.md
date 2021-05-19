@@ -140,16 +140,6 @@ Asian                134
 Native American      127
 Pacific Islander      50
 
-The race type was replaced with a number:
-```python
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('White', 1)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Black', 2)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Hispanic', 3)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Unknown Race', 4)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Asian', 5)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Native American', 6)
-killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Pacific Islander', 7)
-```
 
 ### Splitting Data into Training and Testing Sets
 The features were created by dropping the Victim_Race column and using get_dummies() on the remaining columns.  Victim_Race was the target values.
