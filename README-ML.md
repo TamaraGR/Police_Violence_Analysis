@@ -59,7 +59,7 @@ The following columns were transformed into numerical values using the get_dummi
 The column Victim_Race was dropped because this is the target variable that will be used to predict the outcome.
 
 
-### Model Choice
+### Model Testing
 Random Forest, Decision Tree, and Logistic Regression models were tested.  Note that none of the models were optimized at this time.  Overall, all three models performed relatively the same, but future progress on this model will use Random Forest.  Results below are of the initial tests of the models.
 
 #### Random Forest
@@ -117,7 +117,7 @@ An average recall score of 0.46 means that 46% of class predicitions made out of
 - Normalising of data is not required as it uses a rule-based approach.
 
 
-### Model Training
+## Model Training
 The police killings dataset originally consisted of 16 columns and 9,082 rows of data:
 
 ![police_killings_original](https://user-images.githubusercontent.com/73897240/118197911-e0975f00-b41d-11eb-8414-1fc75c160c12.PNG)
@@ -158,9 +158,79 @@ The dimensionality method of Principal Component Analysis (PCA) was used in orde
 
 The model was fitted and transformed with 30% of the original data.  PCA computes a new set of variables (principal components) and expresses the data in terms of these new variables.  The new variables represent the same amount of information as the original variables and the total variance remains the same.
 
+The model was then trained, tested, and split with the new DataFrame created by PCA.  Stratify was also used with train_test_split in order to make the target more evenly distributed.
 
 
+## Random Forest Model
+The model was fitted with the Random Forest algorithm.  The model gave a ROC accuracy score of .610, or 61%.
+
+The classification report is as follows:
+
+![image](https://user-images.githubusercontent.com/73897240/118877405-69017e00-b8bc-11eb-8cc3-fb1bb9162873.png)
+
+The races White (1), Black (2), and Hispanic (3) had precision scores of 0.59, 0.54, and 0.57, respectively.  This means that the model made positive class predictions 59%, 54%, and 57% of the time.  The Random Forest model made positive class predictions for races Unknown (4), Asian (5), Native American (6) 33% of the time and 83% of the time for Pacific Islander (7).
+
+The overall precision average of this model is 54%.
+
+Recall is the number of members of a class that the model identified correctly divided by the total number of members in that class.  The model correctly identified the races White (1) 88% of the time, followed by Black (2) at 44%, and Hispanic (3) at 39%.  The races Unknown (4), Asian (5), Native American (6), and Pacific Islander (7) had recall scores of 4%, 3%, 3%, and 42%, respectively.
+
+The overall recall score of this model is 57%.
+
+The confusion matrix is used to express how many of this model's predictions were correct, and when incorrect, where the model got confused.  The rows represent true labels and the columns represent predicted labels.  Values on the diagonal represent the number (percentage) of times where the predicted label matched the true label (same as recall).  Values in the other cells represent instances where the model mislabeled an observation, so the columns displays what the classifier predicted, and the row displays what the correct label was.  This provides an easy way to see where the model may need additional training.
+
+![RF_Confusion_Matrix](https://user-images.githubusercontent.com/73897240/118878771-ebd70880-b8bd-11eb-88c8-101e3812a9ce.png)
+
+
+## Random Forest Model Optimization
+An attempt was made to optimize this model using hyperparameterization, which is like adjusting the settings of an algorithm.  For Random Forest models, hyperparameters include the number of decision trees in the forest and the number of features considered by each tree when splitting a node.  This is usually a trial-and-error process.
+
+This process can make a model prone to overfitting, so in order to combat that, the technique of Cross Validation (CV) was employed.  The method K-Fold CV was used, which further splits the training set into K number of subsets, which are known as 'folds'.  The model is then fit K times, and each time time the model is trained on K-1 (K minus 1) of the folds and evaluated on the Kth fold, which is the validation data.   
+
+The following parameters were used on the Random Forest Model
+``` python
+param_grid = {
+    'max_depth': [10, 20, 50],
+    'max_leaf_nodes': [10],
+    'n_estimators': [100],
+    'max_features': [10]
+```
+- max_depth is the max number of level in each decision tree, so the parameters of 10, 20, and 50 are the depth of the decision tree levels
+- max_leaf_nodes grows the tree in best-first fashion until max_leaf_nodes are reached
+- n_estimators is the number of trees in the forest
+- max_features is the maximum number of features considered for splitting a node
+
+This set of parameters fit 3 folds for each of the 3 candidates, for a total of 9 fits.
+
+The Random Forest model was then re-fit with these new parameters.  Its ROC accuracy score was 0.620, or 62%, which is slightly better than the original model.
+
+The classification report is as follows:
+
+![image](https://user-images.githubusercontent.com/73897240/118880979-820c2e00-b8c0-11eb-899a-c29ef3da1279.png)
+
+The races White (1), Black (2), and Hispanic (3) had precision scores of 0.59, 0.53, and 0.53, respectively.  This means that the model made positive class predictions 59%, 53%, and 53% of the time.  The Random Forest model made positive class predictions for races Unknown (4) 38% of the time, Asian (5) 100% of the time, Native American (6) 75% of the time, and 75% of the time for Pacific Islander (7).
+
+The overall precision average of this model is 55%, which is not much, but predictions improved for several of the races.  The precision for Unknown improved by 5%, Asian improved by 17%, Native American improved by 42%, and Pacific Islander improved by 8%.
+
+The average recall score of the optimized Random Forest model is 57%, which is the same as the previous model; however, some of the scores for the individual races changed.  
+
+The recall scores for Black, Unknown, and Asian did not change.
+
+White had a decrease in recall score from 88% to 86%.
+
+The following races showed improvements in their recall scores:
+- Hispanic - 39% --> 40%
+- Native American - 3% --> 9%
+- Pacific Islander - 42% --> 50%
+
+The confusion matrix for the optimized model:
+
+![RF_Confusion_Matrix_Opt](https://user-images.githubusercontent.com/73897240/118883335-1f686180-b8c3-11eb-8aee-c7b3c8520abe.png)
+
+
+## Conclusion
+At this time, model predictions are skewed.  Further tuning and optimization is needed in order to make a reliable predicition on activities will most likely lead to the victim getting killed
 
 
 ### Next Steps
- - Adjust PCA.  The goal is to retain over 80% of the data/information contained in the original data set.
+ - Continue to work on PCA.  The goal is to retain over 80% of the data/information contained in the original data set.
+ - Continue to tune hyperparameters
