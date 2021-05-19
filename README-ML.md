@@ -130,5 +130,37 @@ killings_encoded = pd.get_dummies(killings_df, columns =
                                    'Initial_Reason_for_Encounter', 'Call_for_Service'])
 ```                                   
 
+The Victim_Race column in the data set contained the following counts of races:
+
+White               3935
+Black               2259
+Hispanic            1566
+Unknown Race         903
+Asian                134
+Native American      127
+Pacific Islander      50
+
+The race type was replaced with a number:
+```python
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('White', 1)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Black', 2)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Hispanic', 3)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Unknown Race', 4)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Asian', 5)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Native American', 6)
+killings_encoded['Victim_Race'] = killings_encoded['Victim_Race'].replace('Pacific Islander', 7)
+```
+
+### Splitting Data into Training and Testing Sets
+The features were created by dropping the Victim_Race column and using get_dummies() on the remaining columns.  Victim_Race was the target values.
+
+The dimensionality method of Principal Component Analysis (PCA) was used in order to reduce the size of the data set by transforming the large number of variables into a smaller one that still contained most of the information in the original data set.  The trade-off with using PCA is accuracy, but the trade-off is simplicity.
+
+The model was fitted and transformed with 30% of the original data.  PCA computes a new set of variables (principal components) and expresses the data in terms of these new variables.  The new variables represent the same amount of information as the original variables and the total variance remains the same.
 
 
+
+
+
+### Next Steps
+ - Adjust PCA.  The goal is to retain over 80% of the data/information contained in the original data set.
